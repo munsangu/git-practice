@@ -1,0 +1,101 @@
+CSS  속성
+
+1. 박스모델( 내부 * 외부 여백, 가로 * 세로 등)
+		a. 요소의 가로 / 세로 너비(width / height) : 기본값(요소에 이미 들어있는 속성의 값) = auto(브라우저가 너비를 계산)/                                                                                                        단위 = px, em, vw등
+		b.  span(인라인) vs div(블록)
+			Span(인라인)	div(블록)
+		가로	콘텐츠 크기만큼 자동으로 줄어듬	부모 요소의 크기만큼 자동으로 늘어남
+		세로	콘텐츠 크기만큼 자동으로 줄어듬	콘텐츠 크기만큼 자동으로 줄어듬
+		
+		c.  요소가 커질 수 있는 최대 가로 / 세로 너비(max -width, max-height): 기본값 = none(최대 너비 제한 없음) / 단위 = px, em, vw등
+		d. 요소가 작아질 수 있는 최소 가로 / 세로 너비(min-width, min-height): 기본값 = 0(최소 너비 제한 없음) / 단위 = px, em, vw등
+		e. 요소의 외부 여백(공간)을 지정하는 단축 속성 (margin): 기본값 = 0 / auto(브라우저가 여백을 계산, 가로<세로>너비가 있는 요소의 가운데 정렬에 활용) / 단위 = px, em, vw등 / 음수 가능
+		f. 요소의 내부 여백(공간)을 지정하는 단축 속성(padding): 기본값 = 0 / 단위 = px, em, vw등 / %(부모 요소의 가로 너비에 대한 비율로 지정) / 요소의 크기가 커짐
+		g. 요소의 테두리 선을 지정하는 단축 속성(border): 요소의 크기가 커짐 / border: 선-두께(border-width) 선-종류(border-style) 선-색상(border-color);
+			1) border-width: 요소 테두리 선의 두께 / 단위 = px, em, vw등 / 개별속성, 단축속성
+			2) border-style: 요소 테두리 선의 종류 / 기본값 = none / solid(실선, 일반선), dashed(파선  - - - - - - ) / 개별속성, 단축속성
+			3) Border - color :요소 테투리 선의 색상 / 기본값 = black / 색상, transparent(투명) / 단축속성
+			4) 기타 속성 (border-방향 / border-방향-속성) 
+		h. 요소의 모서리를 둥글게 깎음(border-radius): 기본값 = 0(둥글기 없음) / 단위 = px, em, vw등 / 좌상 우상 우하 좌하
+		i. 요소의 크기 계산 기준을 지정(box-sizing): 기본값 = content-box(요소의 내용으로 크기 계산) / border-box(요소의 내용 + padding + border로 크기 계산)
+		j. 요소의 크기 이상으로 내용이 넘쳤을 때, 보여짐을 제어하는 단축속성(overflow): 기본값 = visible(넘친 내용을 그대로 보여줌) / hidden(넘친 내용을 잘라냄), auto(넘친 내용이 있는 경우에만 잘라내고 스크롤바 생성), scroll(넘친 내용과 관계없이 x축, y축 스크롤바 생성) / overflow-x, overflow-y
+		k. 요소의 화면 출력(보여짐) 특성(display): 기본값 = block(상자<레이아웃>요소) or inline(글자 요소) or inline-block(글자 + 상자 요소) / flex(플렉스 박스<1차원 레이아웃>), grid(그리드<2차원 레이아웃>), none(보여짐 특성 없음, 화면에서 사라짐), 기타(table, talbe-row,table-cell…)
+		l. 요소 투명도(opacity): 기본값 = 1(불투명) / 0 ~ 1 사이의 소수점 숫자
+	  ※ 단축 속성  -> 속성:top, right, bottom, left; / 속성: top, bottom left,right / 속성: top left,right bottom / 속성: top right bottom left
+  	  ※ 개별 속성 -> 속성-top / 속성-right / 속성-bottom / 속성-left 
+
+2. 글꼴
+		a. 글자의 기울기(font-style): 기본값 = none(기울기 없음) / italic(이텔릭체)
+		b. 글자의 두께(font-weight): 기본값 = normal or 400 (기본 두께) / bold or 700(두껍게), 100 ~ 900(100단위의 숫자 9개, normal과 bold 이외 두께)
+		c. 글자의 크기(font-size): 기본값 = 16px / 단위 px, em, rem등 단위로 지정
+		d. 한 줄의 높이(≒행간)(line-height): 기본값 = normal(브라우저의 기본 정의를 사용) / 숫자(요소의 글꼴 크기의 배수로 지정), 단위 px, em, rem등 단위로 지정
+		e. 글꼴(서체) 지정(font-family): 글꼴1, "글꼴2"(띄어쓰기 등 특수문자가 포함된 글꼴 이름은 큰따옴표로 묶어야 함), … 글꼴계열;
+			※ 글꼴 계열: serif(바탕체 계열), sans-serif(고딕체 계열), monospace(고정너비<가로폭이 동등> 글꼴 계열), cursive(필기체), fantasy(장식 글꼴 계열) 등
+			
+3. 문자
+		a. 글자의 색상(color): 기본값 = rgb(0,0,0) <검정색> / 색상(기타 지정 가능한 색상)
+		b. 문자의 정렬방식(text-align): 기본값 = left / right(오른쪽 정렬), center(가운데 정렬), justify(양쪽 정렬)
+		c. 문자의 장식(선)(text-decoration): 기본값 = none(장식 없음) / underline(밑줄), overline(윗줄),line-through(중앙선)
+		d. 문자 첫 줄의 들여쓰기(text-indent): 기본값 = 0 (들여쓰기 없음) / 단위 px, em, rem 등 단위로 지정 / 음수 가능(내어쓰기)
+
+4. 배경
+		a. 요소의 배경 색상(background-color): 기본값 = transparent(투명함) / 색상(지정 가능한 색상)
+		b. 요소의 배경 이미지 삽입(background-image): 기본값 = none(이미지 없음) / url("경로") 
+		c. 요소의 배경 이미지 반복(background-repeat): 기본값 = repeat(이미지를 수직, 수평 반복) / repeat-x(이미지를 수평 반복), repeat-y(이미지를 수직 반복), no-repeat(이미지 반복 없음)
+		d. 요소의 배경 이미지 위치(background-position): 방향(top, bottom, left, right, center), 단위 px, em, rem 등 단위로 지정
+		e. 요소의 배경 이미지 크기(background-size): 기본값 = auto(이미지의 실제 크기) / 단위 px, em, rem 등 단위로 지정, cover(비율을 유지, 요소의 더 넓은 너비에 맞춤), contain(비율을 유지, 요소의 더 짧은 너비에 맞춤)
+                              요소의 배경 이미지 스크롤(background-attachment): 기본값 = scroll(이미지가 요소를 따라서 같이 스크롤) / fixed(이미지가 뷰포트에 고정, 스크롤 no)
+
+5. 배치
+		a. 요소의 위치 지정 기준(position): 기본값 = static(기준 없음) / relative(요소 자신<첫 위치>을 기준, 배치 전 자리는 비어있음), absolute(위치 상 부모 요소를 기준), fixed(뷰포트(브라우저)를 기준) / top, bottom, left, right, z-index(속성) / 음수 사용 가능
+		※ relative 의 경우, 배치를 위한 용도가 아님(위치 상 부모 요소의 역할을 위한 선언)
+		b. 요소의 각 방향별 거리 지정(top, bottom, left, right): 기본값 = auto(브라우저가 계산) / 단위 px, em, rem 등 단위로 지정
+		※ 요소 쌓임 순서(Stack order): 어떤 요소가 사용자와 더 가깝게 있는지(위에 쌓이는지) 결정
+			1) 요소에 position 속성의 값이 있는 경우 위에 쌓임(기본값 static 제외)
+			2) 1) 조건이 같은 경우, z-index 속성의 숫자 값이 높을 수록 위에 쌓임
+			3) 1) 과 2) 조건까지 같은 경우, HTML의 다음 구조일 수록 위에 쌓임 
+		※ 요소의 쌓임 정도를 지정(z-index): 기본값 = auto(부모 요소와 동일한 쌓임 정도) / 숫자(숫자가 높을 수록 위에 쌓임)
+		※ 요소의 display가 변경됨: position 속성의 값으로 absolute, fixed가 지정된 요소는, display 속성이 block으로 변경됨
+		
+6. 플렉스(정렬) - 1차원 레이아웃(수직 정렬 or 수평 정렬)
+		a. Flex Container의 화면 출력(보여짐)(display): flex(블록 요소와 같이 Flex Container 정의), inline-flex(인라인 요소와 같이 Flex Container 정의)
+			 -> display: flex or inline-flex 입력시, Flex Container로 만들 수 있음
+		b. 주 축을 설정(flex-direction): 기본값 = row(행축/ 좌 -> 우) / row-reverse(행축 / 우 -> 좌)  => 수평 
+		c. Flex items 묶음(줄 바꿈) 여부 (flex-wrap): 기본값 = nowrap(묶음<줄바꿈>없음) / wrap(여러 줄로 묶음)
+		d. 주 축의 정렬 방법(justify-content): 기본값 = flex-start(flex items를 시작점으로 정렬) / flex-end(flex items를 끝 점으로 정렬), center(flex items를 가운데 정렬) => 수평 정렬
+		e. 교차 축의 여러 줄 정렬 방법(align-content): 기본값 = stretch(flex items를 시작점으로 정렬) / flex-start(flex items를 시작점으로 정렬), flex-end(flex items를 끝점으로 정렬),
+																                          center(flex items를 가운데 정렬)  => 수직 정렬
+		f. 교차 축의 한 줄 정렬 방법(align-items): 기본값 = stretch(flex items를 시작점으로 정렬) / flex-start(flex items를 시작점으로 정렬), flex-end(flex items를 끝점으로 정렬),
+																                          center(flex items를 가운데 정렬)  => 수직 정렬
+		A ~ F -> flex container 속성(부모)
+		g. Flex items의 순서(order): 기본값 = 0(순서 없음) / 숫자(숫자가 작을 수록 먼저)
+		h. Flex items의 증가 너비 비율(flex-grow): 기본값 = 0(증가 비율 없음) / 숫자(증가 비율)
+		i. Flex items의 감소 너비 비율(flex-shrink): 기본값 = 1(Flex Container 너비에 따라 감소 비율 적용) / 숫자(감소 비율)
+		j. Flex items의 공간 배분 전 기본 너비(flex-basis): 기본값 = auto(요소의 content 너비) / 단위 px, em, rem 등 단위로 지정
+
+7. 전환
+		a. 요소의 전환(시작과 끝)효과를 지정하는 단축 속성(transition): transition-property transition-duration transition-timing-function transition-delay
+			 -> transition: 속성명 지속시간(필수) 타이밍함수 대기시간;
+			1) 전환 효과를 사용할 속성 이름을 지정(transition-property): 기본값 = all (모든 속성에 적용) / 속성이름(전환 효과를 사용할 속성 이름 명시)
+			2) 전환 효과의 지속시간을 지정(transition-duration): 기본값 = 0s(전환 효과 없음) / 시간(지속시간<단위:s>을 지정)
+			3) 전환 효과의 타이밍(Easing)함수를 지정(transition-timing-function): 기본값 = ease(느리게 -> 빠르게 -> 느리게) / linear(일정하게), ease-in(느리게 -> 빠르게), ease-out(빠르게 -> 느리게), ease-in-out(느리게 -> 빠르게 -> 느리게)
+				Easing functions  참고=> 3개
+				- https://easings.net/ko   
+				- https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function  
+				- https://greensock.com/docs/v2/Easing
+			4) 전환 효과가 몇 초 뒤에 시작할지 대기 시간을 지정(transition-delay): 기본값 = 0s(대기시간 없음) / 시간(대기시간<단위:s>을 지정)
+8. 변환
+		a. 요소의 변환 효과: transform: 변환함수1 변환함수2 변환함수3 … ;  =>  transform: 원근법 이동 크기 회전 기울임;
+		b. 하위 요소를 관찰하는 원근 거리를 지정(perspective): 단위 px 등으로 지정 <속성>
+			                                  적용대상	기준점 설정
+		Perspective:600px(속성)	관찰 대상의 부모	Perspective-origin
+		Transform:perspective(600px)(함수)	관찰 대상	Transform-origin
+		c. 3D 변환으로 회전된 요소의 뒷면 숨김 여부(backface-visibility): 기본값 = visible(뒷면 보임) / hidden(뒷면 숨김)
+		
+
+		
+
+		
+		
+		
+		
